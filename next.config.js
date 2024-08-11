@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['http//localhost:3000'],
+    domains: ['https://rukmanatech.github.io/gigi-analis/'],
   },
   env: {
     NEXT_PUBLIC_GEMINI_API_KEY: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
