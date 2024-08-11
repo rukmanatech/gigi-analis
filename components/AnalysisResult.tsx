@@ -1,10 +1,24 @@
 import React from 'react';
 
 interface AnalysisResultProps {
-  result: string;
+  result: string | null;
+  error: string | null;
 }
 
-export function AnalysisResult({ result }: AnalysisResultProps) {
+export function AnalysisResult({ result, error }: AnalysisResultProps) {
+  if (error) {
+    return (
+      <div className="mt-4 p-4 bg-white rounded-lg shadow-lg">
+        <h2 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800">Hasil Analisis:</h2>
+        <p className="text-red-500 text-center mb-4">{error}</p>
+      </div>
+    );
+  }
+
+  if (!result) {
+    return null;
+  }
+
   const sections = result.split('\n\n');
 
   return (
